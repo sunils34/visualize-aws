@@ -1,0 +1,8 @@
+{
+  "name": "visualize-aws",
+  "description": "Another way to manage aws services",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.10.6"
+  }
+}
