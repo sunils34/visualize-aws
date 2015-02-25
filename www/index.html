@@ -17,6 +17,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.8.0/react.min.js"></script>
   <script>window.jQuery.migrateMute || document.write('<script src="https://d389zggrogs7qo.cloudfront.net/js/shared/libs/jquery-migrate.min.d73215496d38ffbaf7136ced76910a96.js"><\/script>')</script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="https://d3ds63zw57jt09.cloudfront.net/1.8/pusher.min.js"></script>
@@ -792,4 +793,17 @@
       </div><!-- page content container -->
     </div><!-- with sidebar -->
   </div><!-- page content -->
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    io = io.connect()
+
+    // Emit ready event.
+    io.emit('ready');
+    // Listen for the talk event.
+    io.on('talk', function(data) {
+      //example
+      console.log('io connected');
+    })  
+  </script>
 </body>
