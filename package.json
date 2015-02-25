@@ -3,6 +3,7 @@
   "description": "Another way to manage aws services",
   "version": "0.0.1",
   "dependencies": {
-    "express": "^4.10.6"
+    "express": "^4.10.6",
+    "ws": "~0.4.31"
   }
 }
