@@ -3,6 +3,7 @@
   "description": "Another way to manage aws services",
   "version": "0.0.1",
   "dependencies": {
-    "express.io": "1.1.13"
+    "express.io": "1.1.13",
+    "aws-sdk": "2.1.14"
   }
 }

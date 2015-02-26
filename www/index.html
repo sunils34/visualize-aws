@@ -804,6 +804,10 @@
     io.on('talk', function(data) {
       //example
       console.log('io connected');
-    })  
+    });
+    io.on('ec2:list', function(data) {
+      //example
+      console.log(data);
+    });
   </script>
 </body>
