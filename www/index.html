@@ -808,6 +808,10 @@
     io.on('ec2:list', function(data) {
       //example
       console.log(data);
-    });
+      });
+      window.addEventListener("beforeunload", function(e){
+        io.emit('exit');
+        // Do something
+        }, false);
   </script>
 </body>
