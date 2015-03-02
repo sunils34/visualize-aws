@@ -6,812 +6,757 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <link rel="shortcut icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" />
-  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/noojglkidnpfjbincgijbaiedldjfbhh">
-  <link href='//fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600' rel='stylesheet' type='text/css'>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" />
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/noojglkidnpfjbincgijbaiedldjfbhh">
+    <link href='//fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="https://d389zggrogs7qo.cloudfront.net/css/buffer.b0c8b14424a5788438a473fcd2ccb9ca.css" type="text/css" />
+    <link rel="stylesheet" href="https://d389zggrogs7qo.cloudfront.net/css/buffer.b0c8b14424a5788438a473fcd2ccb9ca.css" type="text/css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.8.0/react.min.js"></script>
-  <script>window.jQuery.migrateMute || document.write('<script src="https://d389zggrogs7qo.cloudfront.net/js/shared/libs/jquery-migrate.min.d73215496d38ffbaf7136ced76910a96.js"><\/script>')</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  <script src="https://d3ds63zw57jt09.cloudfront.net/1.8/pusher.min.js"></script>
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
-  <script src="https://d389zggrogs7qo.cloudfront.net/js/shared/base.min.95a035e8120a53f666d3866f2e557ac1.js"></script>
+    <script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
 
-  <meta name="p:domain_verify" content="40d64c2760c1ca29532ad5d93b7f8a5b"/> <!-- pinterest verification -->
+    <script>window.jQuery.migrateMute || document.write('<script src="https://d389zggrogs7qo.cloudfront.net/js/shared/libs/jquery-migrate.min.d73215496d38ffbaf7136ced76910a96.js"><\/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://d3ds63zw57jt09.cloudfront.net/1.8/pusher.min.js"></script>
+
+    <script src="https://d389zggrogs7qo.cloudfront.net/js/shared/base.min.95a035e8120a53f666d3866f2e557ac1.js"></script>
+
+    <meta name="p:domain_verify" content="40d64c2760c1ca29532ad5d93b7f8a5b"/> <!-- pinterest verification -->
 
 
-  <link rel="stylesheet" href="https://d389zggrogs7qo.cloudfront.net/css/new-style-guide.2bdb78af5273f13751c525d29001f45c.css"><script src="https://d389zggrogs7qo.cloudfront.net/js/specific/page.common.49b262e955b1123b530b3eff721602ad.js"></script>
-  <script src="https://d389zggrogs7qo.cloudfront.net/js/specific/styleguide.4c611a57e37a686d8178b1ef15a4023c.js"></script>
-
-
-  <title>Visualize AWS</title>
-</head>
-<body>
-  <div class="page-content"><!-- everything that isn't the hero or navigation -->
-    <div class="page-layout with-sidebar">
-      <div class="sidebar-container" id="js-sidebar-container">
-        <section class="sidebar" id="js-sidebar">
-          <ul class="sidebar-list">
-            <span class="sidebar-list-title">EC2</span>
-            <a href="#ec2-instances" class="sidebar-list-item"><li>EC2 Instances</li></a>
-            <a href="#ec2-security-groups" class="sidebar-list-item"><li>Security Groups</li></a>
-            <a href="#ec2-elb" class="sidebar-list-item"><li>Elastic Load Balancers</li></a>
-          </ul>
-
-          <ul class="sidebar-list">
-            <span class="sidebar-list-title">EMR</span>
-            <a href="#notifications" class="sidebar-list-item"><li>Notifications</li></a>
-            <a href="#forms" class="sidebar-list-item"><li>Forms</li></a>
-          </ul>
-
-          <ul class="sidebar-list">
-            <span class="sidebar-list-title">Elastic Beanstalk</span>
-            <a href="#modals" class="sidebar-list-item"><li>Modals</li></a>
-          </ul>
-          <div class="spacer"></div>
-        </section>
-      </div>
-
-      <div class="page-content-container" id="js-page-content-container">
-
-        <section class="grid atom-introduction hide-on-mobile">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-third">
-                <div id="particles-js-atom" class="atomic-graphic"></div>
-                <h5>Atom</h5>
-              </div>
-              <div class="col one-third">
-                <div id="particles-js-molecule" class="atomic-graphic"></div>
-                <h5>Molecule</h5>
-              </div>
-              <div class="col one-third">
-                <div id="particles-js-organism" class="atomic-graphic"></div>
-                <h5>Organism</h5>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="horizontal-divider"></section>
-
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="grid">Grid</h4>
-            <p>At the moment we only utilize the grid system on <span class="highlight">static (non-app) pages</span>. 
-              For the sake of simplicity, the grid is built using larger chunks that provide a few simple ways 
-              to create diverse page layouts. The page can be divided into fifths, fourths, thirds and halves - and any
-              combination of these.
-            </p>
-
-            <p>Each grid row must contain parts that add up to one whole. For example, one-fourth + one-half + 
-              one-fourth. Reference the <code>styleguide.php</code> file to see an example of the grid system 
-              in use.</p>
-          </div>
-        </section>
-
-        <section class="grid">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-half example-grid"></div>
-              <div class="col one-half example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col two-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-              <div class="col two-fifth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col two-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-fifth example-grid"></div>
-              <div class="col three-fifth example-grid"></div>
-              <div class="col one-fifth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col three-fifth example-grid"></div>
-              <div class="col two-fifth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-fourth example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-fourth example-grid"></div>
-              <div class="col one-half example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-half example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-fourth example-grid"></div>
-              <div class="col three-fourths example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-third example-grid"></div>
-              <div class="col one-third example-grid"></div>
-              <div class="col one-third example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col one-third example-grid"></div>
-              <div class="col two-thirds example-grid"></div>
-            </div>
-
-            <div class="grid-row hide-on-mobile">
-              <div class="col two-thirds example-grid"></div>
-              <div class="col one-third example-grid"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="paragraph">
-          <div class="container">
-            <span class="code-header">Example: Grids</span>
-            <code class="code-sample">
-              &lt;div class="grid-row"&gt;<br>
-              &nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
-              &lt;/div&gt;
-              <br><br>
-              &lt;div class="grid-row"&gt;<br>
-              &nbsp;&nbsp;&lt;div class="one-fourth"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&lt;div class="one-half"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&lt;div class="one-fourth"&gt;&lt;/div&gt;<br>
-              &lt;/div&gt;
-            </code>
-          </div>
-        </section>
-
-        <section class="grid">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-third example-grid"></div>
-              <div class="col one-third example-grid"></div>
-              <div class="col one-third example-grid"></div>
-            </div>
-
-            <div class="grid-row">
-              <div class="col one-fourth example-grid"></div>
-              <div class="col one-half example-grid"></div>
-              <div class="col one-fourth example-grid"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="grid">Nested Grids</h4>
-            <p>Grids can be nested, too!
-            </p>
-          </div>
-        </section>
-
-        <section class="paragraph">
-          <div class="container">
-            <span class="code-header">Example: Nested Grids</span>
-            <code class="code-sample">
-              &lt;div class="grid-row"&gt;<br>
-              &nbsp;&nbsp;&lt;div class="one-half"&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&lt;/div&gt;<br><br>	
-              &nbsp;&nbsp;&lt;div class="one-half"&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-half"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-half"&gt;&lt;/div&gt;<br>
-              &nbsp;&nbsp;&lt;/div&gt;<br>	
-              &lt;/div&gt;
-            </code>
-          </div>
-        </section>
-
-        <section class="grid">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-half example-grid example-padded">
-                <div class="col one-third example-grid nested"></div>
-                <div class="col one-third example-grid nested"></div>
-                <div class="col one-third example-grid nested"></div>
-              </div>
-              <div class="col one-half example-grid example-padded">
-                <div class="col one-half example-grid nested"></div>
-                <div class="col one-half example-grid nested"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title">Full-Width Grids</h4>
-            <p>You can add a <code>full-width</code> class modifier to a <code>&lt;section class="grid"&gt;</code>
-              in order to escape any containers and margins. An example of this lives on the 
-              <a href="/transparency">transparency dashboard</a>.
-            </p>
-
-            <p>This is an example of a full-width grid (<strong>note:</strong> turn off the sidebar):</p>
-          </div>
-        </section>
-
-        <section class="grid full-width">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-fifth example-grid" style="background: #323b43;"></div>
-              <div class="col one-fifth example-grid" style="background: #59626a;"></div>
-              <div class="col one-fifth example-grid" style="background: #ced7df;"></div>
-              <div class="col one-fifth example-grid" style="background: #eff3f6;"></div>
-              <div class="col one-fifth example-grid" style="background: #f4f7f9;"></div>
-            </div>
-            <div class="grid-row">
-              <div class="col one-third example-grid" style="background: #323b43;"></div>
-              <div class="col one-third example-grid" style="background: #59626a;"></div>
-              <div class="col one-third example-grid" style="background: #ced7df;"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="horizontal-divider"></section>
-
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="colors">Colors</h4>
-            <p>Using colors consistently brings a sense of familiarty and unity to a product. Buffer's color scheme
-              aims to be clear, unintrusive and friendly.
-            </p>
-
-            <p>The color grid below lists the hex value and CSS variable for each respective color. When writing
-              CSS for production code, please use the <span class="highlight">LESS variables</span> when possible. For further reference, see the 
-              <code>variables.less</code> file.
-            </p>
-          </div>
-        </section>
-
-        <section class="grid">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-fourth color-item">
-                <div class="color-display primaryColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#168eea</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@primaryColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display headingColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#323b43</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@headingColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display bodyColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#59626a</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@bodyColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display borderColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#ced7df</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@borderColor</span>
-              </div>
-            </div>
-
-            <div class="grid-row">
-              <div class="col one-fourth color-item">
-                <div class="color-display lightBorderColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#eff3f6</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@lightBorderColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display fillColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#f4f7f9</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@fillColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display errorColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#ee4f4f</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@errorColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display warningColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#fff9ea</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@warningColor</span>
-              </div>
-            </div>
-
-            <div class="grid-row">
-              <div class="col one-fourth color-item">
-                <div class="color-display successColor"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#76b852</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@successColor</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display facebook"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#3b5998</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@facebook</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display twitter"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#55acee</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@twitter</span>
-              </div>
-
-              <div class="col one-fourth color-item">
-                <div class="color-display googleplus"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#dd4b39</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@googleplus</span>
-              </div>
-            </div>
-
-            <div class="grid-row">
-              <div class="col one-fourth color-item">
-                <div class="color-display linkedin"></div>
-                <span class="color-title">Hex:</span>
-                <span class="color-name">#007bb6</span>
-                <span class="color-title">LESS:</span>
-                <span class="color-name">@linkedin</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="horizontal-divider"></section>
-
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="typography">Typography</h4>
-            <p>We almost exclusively use <span class="highlight">Open Sans</span> as the base typeface
-              across the entire Buffer product. Maintaining typographic clarity and hierarchy is important;
-              here is a showcase of different ways to structure content:
-            </p>
-
-            <br>
-            <h1>Heading Level One</h1>
-            <h2>Heading Level Two</h2>
-            <h3>Heading Level Three</h3>
-            <h4>Heading Level Four</h4>
-            <h5>Heading Level Five</h5>
-            <h6>Heading Level Six</h6>
-            <br>
-
-            <p class="lead">This is a lead paragraph. It might be used as a longer-form tagline or subheading
-              for a page or content section. It has a slightly larger font size and line-height.
-            </p>
-
-            <p>This is a normal paragraph. On static pages, it's designed for readability and optimizing the 
-              number of characters per line. The font size is larger to account for longer chunks of text.
-            </p>
-
-            <blockquote>This is a blockquote. While rarely used, it's designed to stand out from the main body
-              of content and provide hierarchical contrast on the page.
-            </blockquote>
-
-            <ul>
-              <li>This is an</li>
-              <li>unordered list</li>
-              <li>which can be used to</li>
-              <li>...you know, make lists</li>
+    <link rel="stylesheet" href="https://d389zggrogs7qo.cloudfront.net/css/new-style-guide.2bdb78af5273f13751c525d29001f45c.css"><script src="https://d389zggrogs7qo.cloudfront.net/js/specific/page.common.49b262e955b1123b530b3eff721602ad.js"></script>
+    <script src="https://d389zggrogs7qo.cloudfront.net/js/specific/styleguide.4c611a57e37a686d8178b1ef15a4023c.js"></script>
+    <title>Visualize AWS</title>
+  </head>
+  <body>
+    <div class="page-content"><!-- everything that isn't the hero or navigation -->
+      <div class="page-layout with-sidebar">
+        <div class="sidebar-container" id="js-sidebar-container">
+          <section class="sidebar" id="js-sidebar">
+            <ul class="sidebar-list">
+              <span class="sidebar-list-title"><span>EC2 Instances</span> <span id="ec2count"></span></span>
+              <a href="#ec2-instances" class="sidebar-list-item"><li>EC2 Instances</li></a>
+              <a href="#ec2-security-groups" class="sidebar-list-item"><li>Security Groups</li></a>
+              <a href="#ec2-elb" class="sidebar-list-item"><li>Elastic Load Balancers</li></a>
             </ul>
 
-            <ul class="blank">
-              <li>This is a blank</li>
-              <li>unordered list</li>
-              <li>which can be used to</li>
-              <li>...you know, make lists</li>
+            <ul class="sidebar-list">
+              <span class="sidebar-list-title">EMR</span>
+              <a href="#notifications" class="sidebar-list-item"><li>Notifications</li></a>
+              <a href="#forms" class="sidebar-list-item"><li>Forms</li></a>
             </ul>
 
-            <ul class="blank inline">
-              <li><a href="#">Inline</a></li>
-              <li><a href="#">lists</a></li>
-              <li><a href="#">are</a></li>
-              <li><a href="#">possible</a></li>
-              <li><a href="#">too!</a></li>
+            <ul class="sidebar-list">
+              <span class="sidebar-list-title">Elastic Beanstalk</span>
+              <a href="#modals" class="sidebar-list-item"><li>Modals</li></a>
             </ul>
+            <div class="spacer"></div>
+          </section>
+        </div>
 
-            <ol>
-              <li>This is an</li>
-              <li>ordered list</li>
-              <li>which has numbers in front of each item</li>
-              <li>because counting is cool</li>
-            </ol>
-
-            <span class="code-header">Example: Code Block</span>
-            <code class="code-sample">
-              This is an example of a code block. This style will be used for developer docs and in future
-              iterations of this style guide.
-            </code>
-          </div>
-        </section>
-
-        <section class="horizontal-divider"></section>
-
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="buttons">Buttons</h4>
-            <p>Buttons are styled and controlled in <code>buttons.less</code>. We aim to keep all buttons across
-              the app as consistent as possible. Any implementations of buttons should aim to follow a 
-              <span class="highlight">systematic class naming system</span>, detailed below:
-            </p>
-          </div>
-        </section>
-
-        <section class="grid">
-          <div class="container">
-            <div class="grid-row">
-              <div class="col one-fourth button-item">
-                <a href="#" class="button">Button</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Normal</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">button</span>
+        <div class="page-content-container" id="js-page-content-container">
+          <section class="grid">
+            <h4 class="section-title" id="grid">EC2 Instances</h4>
+            <div class="container" id="ec2List"></div>
+            <div class="container">
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
               </div>
 
-              <div class="col one-fourth button-item">
-                <a href="#" class="button btn-primary">Primary</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Primary</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">btn-primary</span>
+              <div class="grid-row hide-on-mobile">
+                <div class="col two-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
+                <div class="col two-fifth example-grid"></div>
               </div>
 
-              <!-- refactor the error into btn-error -->
-              <div class="col one-fourth button-item">
-                <a href="#" class="button error">Error</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Error</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">error</span>
+              <div class="grid-row hide-on-mobile">
+                <div class="col two-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
               </div>
 
-              <div class="col one-fourth button-item">
-                <a href="#" class="button disabled">Disabled</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Disabled</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">disabled</span>
-              </div>
-            </div>
-
-            <div class="grid-row">
-              <div class="col one-fourth button-item">
-                <a href="#" class="button small">Small Button</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Small</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">small</span>
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-fifth example-grid"></div>
+                <div class="col three-fifth example-grid"></div>
+                <div class="col one-fifth example-grid"></div>
               </div>
 
-              <div class="col one-fourth button-item">
-                <a href="#" class="button small btn-primary">Small Primary</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Small Primary</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">small</span>
+              <div class="grid-row hide-on-mobile">
+                <div class="col three-fifth example-grid"></div>
+                <div class="col two-fifth example-grid"></div>
               </div>
 
-              <!-- refactor the error into btn-error -->
-              <div class="col one-fourth button-item">
-                <a href="#" class="button small error">Small Error</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Small Error</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">small</span>
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-fourth example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
               </div>
 
-              <div class="col one-fourth button-item">
-                <a href="#" class="button small disabled">Small Disabled</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Small Disabled</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">small</span>
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-fourth example-grid"></div>
+                <div class="col one-half example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
+              </div>
+
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-half example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
+              </div>
+
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-fourth example-grid"></div>
+                <div class="col three-fourths example-grid"></div>
+              </div>
+
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-third example-grid"></div>
+                <div class="col one-third example-grid"></div>
+                <div class="col one-third example-grid"></div>
+              </div>
+
+              <div class="grid-row hide-on-mobile">
+                <div class="col one-third example-grid"></div>
+                <div class="col two-thirds example-grid"></div>
+              </div>
+
+              <div class="grid-row hide-on-mobile">
+                <div class="col two-thirds example-grid"></div>
+                <div class="col one-third example-grid"></div>
               </div>
             </div>
+          </section>
 
-            <div class="grid-row">
-              <div class="col one-third button-item">
-                <a href="#" class="button large">Large Button</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Large</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">large</span>
+          <section class="paragraph">
+            <div class="container">
+              <span class="code-header">Example: Grids</span>
+              <code class="code-sample">
+                &lt;div class="grid-row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
+                &lt;/div&gt;
+                <br><br>
+                &lt;div class="grid-row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="one-fourth"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="one-half"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="one-fourth"&gt;&lt;/div&gt;<br>
+                &lt;/div&gt;
+              </code>
+            </div>
+          </section>
+
+          <section class="grid">
+            <div class="container">
+              <div class="grid-row">
+                <div class="col one-third example-grid"></div>
+                <div class="col one-third example-grid"></div>
+                <div class="col one-third example-grid"></div>
               </div>
 
-              <div class="col one-third button-item">
-                <a href="#" class="button large btn-primary">Large Primary</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Large Primary</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">large btn-primary</span>
-              </div>
-
-              <div class="col one-third button-item">
-                <a href="#" class="button large error">Large Error</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Large Error</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">large error</span>
+              <div class="grid-row">
+                <div class="col one-fourth example-grid"></div>
+                <div class="col one-half example-grid"></div>
+                <div class="col one-fourth example-grid"></div>
               </div>
             </div>
+          </section>
 
-            <div class="grid-row">
-              <div class="col one-fourth button-item">
-                <a href="#" class="button btn-link">Link</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Link</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">btn-link</span>
-              </div>
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="grid">Nested Grids</h4>
+              <p>Grids can be nested, too!
+              </p>
+            </div>
+          </section>
 
-              <div class="col one-fourth button-item">
-                <a href="#" class="button btn-link btn-link-error">Error Link</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Link Error</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">btn-link btn-link-error</span>
-              </div>
+          <section class="paragraph">
+            <div class="container">
+              <span class="code-header">Example: Nested Grids</span>
+              <code class="code-sample">
+                &lt;div class="grid-row"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="one-half"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-third"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br><br>	
+                &nbsp;&nbsp;&lt;div class="one-half"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-half"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col one-half"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>	
+                &lt;/div&gt;
+              </code>
+            </div>
+          </section>
 
-              <!-- refactor from full-width to btn-full-width -->
-              <div class="one-half button-item">
-                <a href="#" class="button full-width">Full-Width Button</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Full-Width</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">full-width</span>
+          <section class="grid">
+            <div class="container">
+              <div class="grid-row">
+                <div class="col one-half example-grid example-padded">
+                  <div class="col one-third example-grid nested"></div>
+                  <div class="col one-third example-grid nested"></div>
+                  <div class="col one-third example-grid nested"></div>
+                </div>
+                <div class="col one-half example-grid example-padded">
+                  <div class="col one-half example-grid nested"></div>
+                  <div class="col one-half example-grid nested"></div>
+                </div>
               </div>
             </div>
+          </section>
 
-            <div class="grid-row">
-              <div class="col one-fourth button-item">
-                <a href="#" class="button facebook">Facebook</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Facebook Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">facebook</span>
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title">Full-Width Grids</h4>
+              <p>You can add a <code>full-width</code> class modifier to a <code>&lt;section class="grid"&gt;</code>
+                in order to escape any containers and margins. An example of this lives on the 
+                <a href="/transparency">transparency dashboard</a>.
+              </p>
+
+              <p>This is an example of a full-width grid (<strong>note:</strong> turn off the sidebar):</p>
+            </div>
+          </section>
+
+          <section class="grid full-width">
+            <div class="container">
+              <div class="grid-row">
+                <div class="col one-fifth example-grid" style="background: #323b43;"></div>
+                <div class="col one-fifth example-grid" style="background: #59626a;"></div>
+                <div class="col one-fifth example-grid" style="background: #ced7df;"></div>
+                <div class="col one-fifth example-grid" style="background: #eff3f6;"></div>
+                <div class="col one-fifth example-grid" style="background: #f4f7f9;"></div>
               </div>
-
-              <div class="col one-fourth button-item">
-                <a href="#" class="button twitter">Twitter</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Twitter Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">twitter</span>
-              </div>
-
-              <!-- refactor the error into btn-error -->
-              <div class="col one-fourth button-item">
-                <a href="#" class="button linkedin">LinkedIn</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">LinkedIn Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">linkedin</span>
-              </div>
-
-              <div class="col one-fourth button-item">
-                <a href="#" class="button googleplus">Google+</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Google+ Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">googleplus</span>
+              <div class="grid-row">
+                <div class="col one-third example-grid" style="background: #323b43;"></div>
+                <div class="col one-third example-grid" style="background: #59626a;"></div>
+                <div class="col one-third example-grid" style="background: #ced7df;"></div>
               </div>
             </div>
+          </section>
 
-            <div class="grid-row">
-              <div class="col one-third button-item">
-                <div class="outline-button-bg"></div>
-                <a href="#" class="button btn-outline">Outline Dark</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Outline Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">btn-outline</span>
-              </div>
+          <section class="horizontal-divider"></section>
 
-              <div class="col one-third button-item">
-                <div class="outline-button-bg light"></div>
-                <a href="#" class="button btn-outline-light">Outline Light</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Outline Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">btn-outline-light</span>
-              </div>
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="colors">Colors</h4>
+              <p>Using colors consistently brings a sense of familiarty and unity to a product. Buffer's color scheme
+                aims to be clear, unintrusive and friendly.
+              </p>
 
-              <div class="col one-third button-item">
-                <a href="#" class="button btn-outline btn-primary">Outline Primary</a>
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Outline Button</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">btn-outline btn-primary</span>
-              </div>
+              <p>The color grid below lists the hex value and CSS variable for each respective color. When writing
+                CSS for production code, please use the <span class="highlight">LESS variables</span> when possible. For further reference, see the 
+                <code>variables.less</code> file.
+              </p>
             </div>
+          </section>
 
-            <div class="grid-row">
-              <div class="col one-third button-item">
-                <div class="button-group">
-                  <a href="#" class="button">1</a>
-                  <a href="#" class="button">2</a>
-                  <a href="#" class="button">3</a>
+          <section class="grid">
+            <div class="container">
+              <div class="grid-row">
+                <div class="col one-fourth color-item">
+                  <div class="color-display primaryColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#168eea</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@primaryColor</span>
                 </div>
 
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Button Group</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">button-group > button</span>
-              </div>
-
-              <div class="col one-third button-item">
-                <div class="button-group">
-                  <a href="#" class="button btn-primary">1</a>
-                  <a href="#" class="button btn-primary">2</a>
-                  <a href="#" class="button btn-primary">3</a>
+                <div class="col one-fourth color-item">
+                  <div class="color-display headingColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#323b43</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@headingColor</span>
                 </div>
 
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Button Group</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">button-group > btn-primary</span>
-              </div>
-
-              <div class="col one-third button-item">
-                <div class="outline-button-bg"></div>
-                <div class="button-group">
-                  <a href="#" class="button btn-outline">1</a>
-                  <a href="#" class="button btn-outline">2</a>
-                  <a href="#" class="button btn-outline">3</a>
+                <div class="col one-fourth color-item">
+                  <div class="color-display bodyColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#59626a</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@bodyColor</span>
                 </div>
 
-                <span class="button-item-title">Type:</span>
-                <span class="button-item-name">Button Group</span>
-                <span class="button-item-title">Class:</span>
-                <span class="button-item-name">button-group > btn-outline</span>
+                <div class="col one-fourth color-item">
+                  <div class="color-display borderColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#ced7df</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@borderColor</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-fourth color-item">
+                  <div class="color-display lightBorderColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#eff3f6</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@lightBorderColor</span>
+                </div>
+
+                <div class="col one-fourth color-item">
+                  <div class="color-display fillColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#f4f7f9</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@fillColor</span>
+                </div>
+
+                <div class="col one-fourth color-item">
+                  <div class="color-display errorColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#ee4f4f</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@errorColor</span>
+                </div>
+
+                <div class="col one-fourth color-item">
+                  <div class="color-display warningColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#fff9ea</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@warningColor</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-fourth color-item">
+                  <div class="color-display successColor"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#76b852</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@successColor</span>
+                </div>
+
+                <div class="col one-fourth color-item">
+                  <div class="color-display facebook"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#3b5998</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@facebook</span>
+                </div>
+
+                <div class="col one-fourth color-item">
+                  <div class="color-display twitter"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#55acee</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@twitter</span>
+                </div>
+
+                <div class="col one-fourth color-item">
+                  <div class="color-display googleplus"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#dd4b39</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@googleplus</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-fourth color-item">
+                  <div class="color-display linkedin"></div>
+                  <span class="color-title">Hex:</span>
+                  <span class="color-name">#007bb6</span>
+                  <span class="color-title">LESS:</span>
+                  <span class="color-name">@linkedin</span>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="horizontal-divider"></section>
+          <section class="horizontal-divider"></section>
 
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="inputs">Inputs</h4>
-            <p>Creating forms can be tricky - this will be a toolkit to help build fast, flexible forms
-              to be used anywhere in the product. <span class="highlight">Coming soon</span>.
-            </p>
-          </div>
-        </section>
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="typography">Typography</h4>
+              <p>We almost exclusively use <span class="highlight">Open Sans</span> as the base typeface
+                across the entire Buffer product. Maintaining typographic clarity and hierarchy is important;
+                here is a showcase of different ways to structure content:
+              </p>
 
-        <section class="horizontal-divider"></section>
+              <br>
+              <h1>Heading Level One</h1>
+              <h2>Heading Level Two</h2>
+              <h3>Heading Level Three</h3>
+              <h4>Heading Level Four</h4>
+              <h5>Heading Level Five</h5>
+              <h6>Heading Level Six</h6>
+              <br>
 
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="notifications">Notifications</h4>
-            <p>Buttons are styled and controlled in <code>buttons.less</code>. We aim to keep all buttons across
-              the app as consistent as possible. Any implementations of buttons should aim to follow a 
-              <span class="highlight">systematic class naming system</span>, detailed below:
-            </p>
+              <p class="lead">This is a lead paragraph. It might be used as a longer-form tagline or subheading
+                for a page or content section. It has a slightly larger font size and line-height.
+              </p>
 
-            <div class="notification yellow">Hello</div>
-            <div class="notification red">Hello</div>
-            <div class="notification green">Hello</div>
-            <div class="notification blue">Hello</div>
-          </div>
-        </section>
+              <p>This is a normal paragraph. On static pages, it's designed for readability and optimizing the 
+                number of characters per line. The font size is larger to account for longer chunks of text.
+              </p>
 
-        <section class="horizontal-divider"></section>
+              <blockquote>This is a blockquote. While rarely used, it's designed to stand out from the main body
+                of content and provide hierarchical contrast on the page.
+              </blockquote>
 
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="forms">Forms</h4>
-            <p>Creating forms can be tricky - this will be a toolkit to help build fast, flexible forms
-              to be used anywhere in the product. <span class="highlight">Coming soon</span>.
-            </p>
-          </div>
-        </section>
+              <ul>
+                <li>This is an</li>
+                <li>unordered list</li>
+                <li>which can be used to</li>
+                <li>...you know, make lists</li>
+              </ul>
 
-        <section class="horizontal-divider"></section>
+              <ul class="blank">
+                <li>This is a blank</li>
+                <li>unordered list</li>
+                <li>which can be used to</li>
+                <li>...you know, make lists</li>
+              </ul>
 
-        <section class="paragraph">
-          <div class="container">
-            <h4 class="section-title" id="modals">Modals</h4>
-            <p>We use modals heavily throughout the product to help users focus on single-tasks (like
-              changing billing information or adding a team member). Modals should maintain a consistent
-              style to provide a unified experience for users.
-            </p>
-          </div>
-        </section>
+              <ul class="blank inline">
+                <li><a href="#">Inline</a></li>
+                <li><a href="#">lists</a></li>
+                <li><a href="#">are</a></li>
+                <li><a href="#">possible</a></li>
+                <li><a href="#">too!</a></li>
+              </ul>
 
-        <section class="spacer-40"></section>
+              <ol>
+                <li>This is an</li>
+                <li>ordered list</li>
+                <li>which has numbers in front of each item</li>
+                <li>because counting is cool</li>
+              </ol>
 
-        <section class="call-to-action dark-background test-bg">
-          <div class="container">
-            <h2 class="cta-heading">This is a call to action headline</h2>
-            <h3 class="cta-subheading">And it pairs beautifully with a subheading here, like this</h3>
-            <a href="#" class="large button btn-outline cta-action">Primary Action</a>
-          </div>
-        </section>
+              <span class="code-header">Example: Code Block</span>
+              <code class="code-sample">
+                This is an example of a code block. This style will be used for developer docs and in future
+                iterations of this style guide.
+              </code>
+            </div>
+          </section>
 
-      </div><!-- page content container -->
-    </div><!-- with sidebar -->
-  </div><!-- page content -->
+          <section class="horizontal-divider"></section>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    io = io.connect()
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="buttons">Buttons</h4>
+              <p>Buttons are styled and controlled in <code>buttons.less</code>. We aim to keep all buttons across
+                the app as consistent as possible. Any implementations of buttons should aim to follow a 
+                <span class="highlight">systematic class naming system</span>, detailed below:
+              </p>
+            </div>
+          </section>
 
-    // Emit ready event.
-    io.emit('ready');
-    // Listen for the talk event.
-    io.on('talk', function(data) {
-      //example
-      console.log('io connected');
-    });
-    io.on('ec2:list', function(data) {
-      //example
-      console.log(data);
-      });
-      window.addEventListener("beforeunload", function(e){
-        io.emit('exit');
-        // Do something
-        }, false);
-  </script>
-</body>
+          <section class="grid">
+            <div class="container">
+              <div class="grid-row">
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button">Button</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Normal</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">button</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button btn-primary">Primary</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Primary</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">btn-primary</span>
+                </div>
+
+                <!-- refactor the error into btn-error -->
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button error">Error</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Error</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">error</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button disabled">Disabled</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Disabled</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">disabled</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button small">Small Button</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Small</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">small</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button small btn-primary">Small Primary</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Small Primary</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">small</span>
+                </div>
+
+                <!-- refactor the error into btn-error -->
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button small error">Small Error</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Small Error</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">small</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button small disabled">Small Disabled</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Small Disabled</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">small</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-third button-item">
+                  <a href="#" class="button large">Large Button</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Large</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">large</span>
+                </div>
+
+                <div class="col one-third button-item">
+                  <a href="#" class="button large btn-primary">Large Primary</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Large Primary</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">large btn-primary</span>
+                </div>
+
+                <div class="col one-third button-item">
+                  <a href="#" class="button large error">Large Error</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Large Error</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">large error</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button btn-link">Link</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Link</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">btn-link</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button btn-link btn-link-error">Error Link</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Link Error</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">btn-link btn-link-error</span>
+                </div>
+
+                <!-- refactor from full-width to btn-full-width -->
+                <div class="one-half button-item">
+                  <a href="#" class="button full-width">Full-Width Button</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Full-Width</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">full-width</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button facebook">Facebook</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Facebook Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">facebook</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button twitter">Twitter</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Twitter Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">twitter</span>
+                </div>
+
+                <!-- refactor the error into btn-error -->
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button linkedin">LinkedIn</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">LinkedIn Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">linkedin</span>
+                </div>
+
+                <div class="col one-fourth button-item">
+                  <a href="#" class="button googleplus">Google+</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Google+ Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">googleplus</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-third button-item">
+                  <div class="outline-button-bg"></div>
+                  <a href="#" class="button btn-outline">Outline Dark</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Outline Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">btn-outline</span>
+                </div>
+
+                <div class="col one-third button-item">
+                  <div class="outline-button-bg light"></div>
+                  <a href="#" class="button btn-outline-light">Outline Light</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Outline Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">btn-outline-light</span>
+                </div>
+
+                <div class="col one-third button-item">
+                  <a href="#" class="button btn-outline btn-primary">Outline Primary</a>
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Outline Button</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">btn-outline btn-primary</span>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="col one-third button-item">
+                  <div class="button-group">
+                    <a href="#" class="button">1</a>
+                    <a href="#" class="button">2</a>
+                    <a href="#" class="button">3</a>
+                  </div>
+
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Button Group</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">button-group > button</span>
+                </div>
+
+                <div class="col one-third button-item">
+                  <div class="button-group">
+                    <a href="#" class="button btn-primary">1</a>
+                    <a href="#" class="button btn-primary">2</a>
+                    <a href="#" class="button btn-primary">3</a>
+                  </div>
+
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Button Group</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">button-group > btn-primary</span>
+                </div>
+
+                <div class="col one-third button-item">
+                  <div class="outline-button-bg"></div>
+                  <div class="button-group">
+                    <a href="#" class="button btn-outline">1</a>
+                    <a href="#" class="button btn-outline">2</a>
+                    <a href="#" class="button btn-outline">3</a>
+                  </div>
+
+                  <span class="button-item-title">Type:</span>
+                  <span class="button-item-name">Button Group</span>
+                  <span class="button-item-title">Class:</span>
+                  <span class="button-item-name">button-group > btn-outline</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="horizontal-divider"></section>
+
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="inputs">Inputs</h4>
+              <p>Creating forms can be tricky - this will be a toolkit to help build fast, flexible forms
+                to be used anywhere in the product. <span class="highlight">Coming soon</span>.
+              </p>
+            </div>
+          </section>
+
+          <section class="horizontal-divider"></section>
+
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="notifications">Notifications</h4>
+              <p>Buttons are styled and controlled in <code>buttons.less</code>. We aim to keep all buttons across
+                the app as consistent as possible. Any implementations of buttons should aim to follow a 
+                <span class="highlight">systematic class naming system</span>, detailed below:
+              </p>
+
+              <div class="notification yellow">Hello</div>
+              <div class="notification red">Hello</div>
+              <div class="notification green">Hello</div>
+              <div class="notification blue">Hello</div>
+            </div>
+          </section>
+
+          <section class="horizontal-divider"></section>
+
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="forms">Forms</h4>
+              <p>Creating forms can be tricky - this will be a toolkit to help build fast, flexible forms
+                to be used anywhere in the product. <span class="highlight">Coming soon</span>.
+              </p>
+            </div>
+          </section>
+
+          <section class="horizontal-divider"></section>
+
+          <section class="paragraph">
+            <div class="container">
+              <h4 class="section-title" id="modals">Modals</h4>
+              <p>We use modals heavily throughout the product to help users focus on single-tasks (like
+                changing billing information or adding a team member). Modals should maintain a consistent
+                style to provide a unified experience for users.
+              </p>
+            </div>
+          </section>
+
+          <section class="spacer-40"></section>
+
+          <section class="call-to-action dark-background test-bg">
+            <div class="container">
+              <h2 class="cta-heading">This is a call to action headline</h2>
+              <h3 class="cta-subheading">And it pairs beautifully with a subheading here, like this</h3>
+              <a href="#" class="large button btn-outline cta-action">Primary Action</a>
+            </div>
+          </section>
+
+        </div><!-- page content container -->
+      </div><!-- with sidebar -->
+    </div><!-- page content -->
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="js/bundle.js"></script>
+  </body>
+</html>
