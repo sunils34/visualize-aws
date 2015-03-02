@@ -4,14 +4,15 @@ var AWSApp = require('./components/AWSApp.react');
 var Sidebar = require('./components/Sidebar.react');
 var AppDispatcher = require('./dispatcher/AppDispatcher');
 AWSActions = require('./actions/AWSActions');
+var EC2Mixin = require('./mixins/aws.mixin');
 
 var sections = [
   {
     "title" : "EC2",
     "subtitles"  : [
-      { "title":"EC2 Instances", "id": "ec2-instances"},
-      { "title":"Security Groups", "id":"ec2-security-groups"},
-      { "title":"Elastic Load Balancers", "id": "ec2-elb"},
+      { "title":"EC2 Instances", "id": "ec2-instances",  "mixin":EC2Mixin},
+      { "title":"Security Groups", "id":"ec2-security-groups", "mixin":null},
+      { "title":"Elastic Load Balancers", "id": "ec2-elb", "mixin":null}
     ]
   }
 ]

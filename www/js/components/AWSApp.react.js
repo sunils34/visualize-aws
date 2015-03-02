@@ -1,9 +1,9 @@
 var Footer = require('./Footer.react');
 var React = require('react');
-var EC2Mixin = require('../mixins/ec2.mixin');
+var AWSMixin = require('../mixins/aws.mixin');
 
 var AWSApp = React.createClass({
-  mixins:[EC2Mixin],
+  mixins:[AWSMixin],
   render: function() {
       return (
         <span>

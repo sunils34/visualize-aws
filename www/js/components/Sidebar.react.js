@@ -1,24 +1,27 @@
 
 var React = require('react');
-var EC2Mixin = require('../mixins/ec2.mixin');
+var AWSMixin = require('../mixins/aws.mixin');
 
 var SidebarItem = React.createClass({
-  mixins:[EC2Mixin],
+
+  mixins:[AWSMixin],
   render: function() {
+    var num = "";
+    if(this.props.id && this.state && this.state[this.props.id] != null) {
+      num = " (" + this.state[this.props.id].length +")";
+    }
     return (
-      <a href="{this.props.id}" className="sidebar-list-item"><li>{this.props.title}</li></a>
+      <a href="{this.props.id}" className="sidebar-list-item"><li>{this.props.title}{num}</li></a>
     );
   }
 });
 
 var SidebarSection = React.createClass({
-  mixins:[EC2Mixin],
   render: function() {
     var title = this.props.title;
     var subtitles = [];
-    console.log(this.props);
     this.props.subtitles.forEach(function(subtitle) {
-      subtitles.push(<SidebarItem title={subtitle.title} id={subtitle.id} />);
+      subtitles.push(<SidebarItem title={subtitle.title} id={subtitle.id} mixin={subtitle.mixin}  />);
     });
     return (
       <ul className="sidebar-list">
@@ -30,11 +33,9 @@ var SidebarSection = React.createClass({
 });
 
 var Sidebar = React.createClass({
-  mixins:[EC2Mixin],
   render: function() {
 
     var sections = [];
-    console.log(this.props.sections);
     this.props.sections.forEach(function(section) {
       sections.push(<SidebarSection subtitles={section.subtitles} title={section.title}/>);
     });

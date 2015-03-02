@@ -2,12 +2,12 @@
 var AWSStore = require('../stores/AWSStore');
 function getAWSState() {
   return {
-    instances: AWSStore.getInstances()
+    "ec2-instances": AWSStore.getInstances()
   };
 }
 
 
-var EC2Mixin = {
+var AWSMixin = {
 
   _onChange: function() {
     this.setState(getAWSState());
@@ -25,4 +25,4 @@ var EC2Mixin = {
   },
 }
 
-module.exports = EC2Mixin;
+module.exports = AWSMixin;

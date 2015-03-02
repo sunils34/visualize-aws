@@ -5,7 +5,7 @@ var assign = require('object-assign');
 
 var EC2_CHANGE_EVENT = 'ec2-change';
 
-_AWS = {};
+_AWS = {EC2Reservations : []};
 
 /**
  * Update EC2List
