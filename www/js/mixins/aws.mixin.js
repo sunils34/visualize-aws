@@ -2,7 +2,7 @@
 var AWSStore = require('../stores/AWSStore');
 function getAWSState() {
   return {
-    "ec2-instances": AWSStore.getInstances()
+    "ec2-instances": AWSStore.getRunningInstances()
   };
 }
 

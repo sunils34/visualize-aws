@@ -5,16 +5,20 @@ var assign = require('object-assign');
 
 var EC2_CHANGE_EVENT = 'ec2-change';
 
-_AWS = {EC2Reservations : []};
+_AWS = {EC2Instances : []};
 
 /**
  * Update EC2List
  * @param  {array} array The list of EC2 Instances
  */
-function updateEC2List(instances) {
+function updateEC2List(reservations) {
   //update title
-  document.title = "(" + instances.length + ") Instances";
-  _AWS.EC2Reservations = instances;
+  //
+  var instances = [];
+  reservations.forEach(function(i) {
+    instances = instances.concat(i.Instances);
+  });
+  _AWS.EC2Instances = instances;
 }
 
 var AWSStore = assign({}, EventEmitter.prototype, {
@@ -23,8 +27,15 @@ var AWSStore = assign({}, EventEmitter.prototype, {
    * Get the entire collection of TODOs.
    * @return {object}
    */
-  getInstances: function() {
-    return _AWS.EC2Reservations;
+  getRunningInstances: function() {
+    var instances = [];
+    _AWS.EC2Instances.forEach(function(i) {
+      //running state
+      if(i.State.Code==16) {
+        instances.push(i);
+      }
+    });
+    return instances;
   },
 
   emitChange: function() {
