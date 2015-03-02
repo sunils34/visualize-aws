@@ -2,8 +2,31 @@
   "name": "visualize-aws",
   "description": "Another way to manage aws services",
   "version": "0.0.1",
+  "main": "www/js/app.js",
   "dependencies": {
     "express.io": "1.1.13",
-    "aws-sdk": "2.1.14"
+    "aws-sdk": "2.1.14",
+    "flux": "^2.0.1",
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0",
+    "react": "^0.12.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "envify": "^3.0.0",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "watchify -o www/js/bundle.js -v -d .",
+    "build": "NODE_ENV=production browserify . | uglifyjs -cm > www/js/bundle.min.js"
+  },
+  "author": "Sunil Sadasivan",
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
   }
 }
