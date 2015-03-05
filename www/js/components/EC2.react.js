@@ -20,7 +20,10 @@ var EC2Section = React.createClass({
       ec2items.push(<EC2Item instance={i} />);
     });
     return (
+      <div>
+      <h4 class="section-title" id="grid">EC2 Instances</h4>
       <div className="container" id="ec2-instances">{ec2items}</div>
+      </div>
     );
   }
 });
