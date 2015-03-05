@@ -1,0 +1,5 @@
+.ec2-instance {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+}

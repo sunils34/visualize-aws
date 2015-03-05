@@ -15,12 +15,34 @@ _AWS = {
  * @param  {array} array The list of EC2 Instances
  */
 function updateEC2List(reservations) {
-  //update title
-  //
+
+  //get names for each instance
+  var getName = function(instance) {
+    var name = null;
+    if(instance.Tags) {
+      instance.Tags.forEach(function(x) {
+        if(x.Key == "Name") {
+          name = x.Value;
+          return;
+        }
+      });
+    }
+    return (name) ? name : instance.InstanceId;
+  }
+
   var instances = [];
   reservations.forEach(function(i) {
     instances = instances.concat(i.Instances);
   });
+  instances.forEach(function(i) {
+    i.Name = getName(i);
+  });
+
+  //sort by name
+  instances.sort(function(a, b) {
+    return (a.Name > b.Name) ? 1 : -1 ;
+  });
+
   _AWS.EC2Instances = instances;
 }
 

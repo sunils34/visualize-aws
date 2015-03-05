@@ -1,4 +1,3 @@
-
 var React = require('react');
 var AWSMixin = require('../mixins/aws.mixin');
 

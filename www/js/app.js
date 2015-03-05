@@ -2,6 +2,7 @@ var React = require('react');
 console.log('render app');
 var AWSApp = require('./components/AWSApp.react');
 var Sidebar = require('./components/Sidebar.react');
+var EC2Section = require('./components/EC2.react');
 var AppDispatcher = require('./dispatcher/AppDispatcher');
 AWSActions = require('./actions/AWSActions');
 var EC2Mixin = require('./mixins/aws.mixin');
@@ -20,6 +21,11 @@ var sections = [
 React.render(
   <Sidebar sections={sections}/>,
   $('#js-sidebar-container')[0]
+);
+
+React.render(
+  <EC2Section />,
+  $('#ec2List')[0]
 );
 
 io = io.connect()
