@@ -10,8 +10,9 @@ var SidebarItem = React.createClass({
     if(this.props.id && this.state && this.state[this.props.id] != null) {
       num = " (" + this.state[this.props.id].length +")";
     }
+    var href = "#" + this.props.id;
     return (
-      <a href="{this.props.id}" className="sidebar-list-item"><li>{this.props.title}{num}</li></a>
+      <a href={href} className="sidebar-list-item"><li>{this.props.title}{num}</li></a>
     );
   }
 });
