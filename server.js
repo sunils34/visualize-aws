@@ -3,14 +3,19 @@ var express = require('express.io'),
 
 app.http().io()
 
+var sendData = function() {
+  var ec2 = require('./handlers/ec2');
+  ec2.listEC2(app);
+  ec2.listSG(app);
+}
+
 interval = null;
 var clients = 0;
 var poll = null;
 app.io.route('ready', function(req) {
-  var ec2 = require('./handlers/ec2');
-  ec2.list(app);
+  sendData();
   if(clients == 0) {
-    poll = setInterval(function(){ec2.list(app);}, 1000*10);
+    poll = setInterval(sendData, 1000*10);
   }
   clients++;
 
@@ -22,7 +27,6 @@ app.io.route('ready', function(req) {
 
 app.io.route('exit', function(req) {
   var ec2 = require('./handlers/ec2');
-  ec2.list(app);
   if(clients > 0) clients--;
   if(clients == 0 && poll) {
     clearInterval(poll);

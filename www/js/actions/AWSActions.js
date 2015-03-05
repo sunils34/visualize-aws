@@ -4,10 +4,17 @@ var AWSConstants = require('../constants/AWSConstants');
 
 AWSActions = {
 
-  updateInstances: function(instances) {
+  updateEC2: function(instances) {
     AppDispatcher.dispatch({
       actionType: AWSConstants.AWS_EC2_UPDATE,
       instances: instances
+    });
+  },
+
+  updateSG: function(groups) {
+    AppDispatcher.dispatch({
+      actionType: AWSConstants.AWS_SG_UPDATE,
+      groups: groups
     });
   },
 }

@@ -5,7 +5,10 @@ var assign = require('object-assign');
 
 var EC2_CHANGE_EVENT = 'ec2-change';
 
-_AWS = {EC2Instances : []};
+_AWS = {
+  EC2Instances : [],
+  SGGroups : []
+};
 
 /**
  * Update EC2List
@@ -21,10 +24,19 @@ function updateEC2List(reservations) {
   _AWS.EC2Instances = instances;
 }
 
+/**
+ * Update SG List
+ * @param  {array} array The list of SG Groups
+ */
+function updateSGList(reservations) {
+  //update title
+  _AWS.SGGroups = reservations
+}
+
 var AWSStore = assign({}, EventEmitter.prototype, {
 
   /**
-   * Get the entire collection of TODOs.
+   * Get the entire collection of running instances.
    * @return {object}
    */
   getRunningInstances: function() {
@@ -36,6 +48,13 @@ var AWSStore = assign({}, EventEmitter.prototype, {
       }
     });
     return instances;
+  },
+  /**
+   * Get the entire collection of security groups.
+   * @return {object}
+   */
+  getSecurityGroups: function() {
+    return _AWS.SGGroups;
   },
 
   emitChange: function() {
@@ -64,6 +83,10 @@ AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case AWSConstants.AWS_EC2_UPDATE:
       updateEC2List(action.instances);
+      AWSStore.emitChange();
+      break;
+    case AWSConstants.AWS_SG_UPDATE:
+      updateSGList(action.groups);
       AWSStore.emitChange();
       break;
     default:

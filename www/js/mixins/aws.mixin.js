@@ -2,7 +2,8 @@
 var AWSStore = require('../stores/AWSStore');
 function getAWSState() {
   return {
-    "ec2-instances": AWSStore.getRunningInstances()
+    "ec2-instances": AWSStore.getRunningInstances(),
+    "ec2-security-groups": AWSStore.getSecurityGroups()
   };
 }
 

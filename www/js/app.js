@@ -25,14 +25,18 @@ React.render(
 io = io.connect()
 // Emit ready event.
 io.emit('ready');
+
 // Listen for the talk event.
 io.on('talk', function(data) {
-  //example
   console.log('io connected');
 });
-io.on('ec2:list', function(data) {
-  //example
-  AWSActions.updateInstances(data.reservations);
+
+io.on('ec2:ec2list', function(data) {
+  AWSActions.updateEC2(data.reservations);
+});
+
+io.on('ec2:sglist', function(data) {
+  AWSActions.updateSG(data.reservations);
 });
 window.addEventListener("beforeunload", function(e){
   io.emit('exit');
