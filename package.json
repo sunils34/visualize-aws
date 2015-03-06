@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "main": "www/js/app.js",
   "dependencies": {
-    "express.io": "1.1.13",
+    "applescript": "1.0.0",
     "aws-sdk": "2.1.14",
+    "express.io": "1.1.13",
     "flux": "^2.0.1",
     "keymirror": "~0.1.0",
     "object-assign": "^1.0.0",
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "start": "watchify -o www/js/bundle.js -v -d .",
-    "build": "NODE_ENV=production browserify . | uglifyjs -cm > www/js/bundle.min.js"
+    "build": "NODE_ENV=production browserify . > www/js/bundle.js"
   },
   "author": "Sunil Sadasivan",
   "browserify": {

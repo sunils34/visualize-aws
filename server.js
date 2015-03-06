@@ -34,6 +34,12 @@ app.io.route('exit', function(req) {
   console.log('EXIT: number of clients ' + clients);
 })
 
+
+app.io.route('ec2SSH', function(req) {
+  var ec2 = require('./handlers/ec2');
+  ec2.sshEC2(req.data);
+});
+
 app.use(express.static('www'));
 
 app.listen(7076)

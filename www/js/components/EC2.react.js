@@ -1,12 +1,17 @@
 var React = require('react');
 var AWSMixin = require('../mixins/aws.mixin');
+var AWSActions = require('../actions/AWSActions');
 
 var EC2Item = React.createClass({
 
   render: function() {
     return (
-      <a href="#" className="col one-fourth ec2-instance">{this.props.instance.Name}</a>
+      <a href="#" onClick={this._onSSHClick} className="col one-fourth ec2-instance">{this.props.instance.Name}</a>
     );
+  },
+
+  _onSSHClick: function() {
+    AWSActions.sshInto(this.props.instance);
   }
 });
 
